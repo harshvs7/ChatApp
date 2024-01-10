@@ -76,6 +76,21 @@ extension UIViewController {
             self.present(alert, animated: true)
         }
     }
+    func showAlertTwoButton(with title: String, with message: String, with buttonTextOne: String,with buttonTextTwo: String, completion: @escaping ((Bool) -> Void) ) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttonTextOne, style: .default) { _ in
+            completion(false)
+        }
+        let actionTwo = UIAlertAction(title: buttonTextTwo, style: .default) { _ in
+            completion(true)
+        }
+        alert.addAction(action)
+        alert.addAction(actionTwo)
+        
+        DispatchQueue.main.async{
+            self.present(alert, animated: true)
+        }
+    }
 }
 
 @IBDesignable

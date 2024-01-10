@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "77E7ADBA-983C-4F5A-96F7-4F514E063800"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE1EBCB2-ED13-43F8-8281-595425875AFD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB3B2D91-C99B-4579-97B5-2EFD856D52E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B902C58A-AE2D-411B-AA0B-4D40468B6A4B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B902C58A-AE2D-411B-AA0B-4D40468B6A4B - 42c416f4c8f6d858"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "B902C58A-AE2D-411B-AA0B-4D40468B6A4B - 7b9a73b682259c5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "1112">
+               </Location>
+               <Location
+                  uuid = "B902C58A-AE2D-411B-AA0B-4D40468B6A4B - 9471ec77545b505c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2B36B35-AADB-4473-89C5-E305C4053BF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "799F0047-DA84-4D02-9CE1-65BE613F6C1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "799F0047-DA84-4D02-9CE1-65BE613F6C1E - 6806a1d7bf4cf0a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "799F0047-DA84-4D02-9CE1-65BE613F6C1E - 9471ec77545b52a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "516">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6B414E5-E479-4C4C-950B-0CFB957EBCE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "btnGoogleLoginTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66A60BAF-671F-451F-9A5F-3B1453C1FA05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "66A60BAF-671F-451F-9A5F-3B1453C1FA05 - 29eeba3a76c724b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1452">
+               </Location>
+               <Location
+                  uuid = "66A60BAF-671F-451F-9A5F-3B1453C1FA05 - 53f48e6c5d53e9c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "66A60BAF-671F-451F-9A5F-3B1453C1FA05 - 42c416f4c8f6d8bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "66A60BAF-671F-451F-9A5F-3B1453C1FA05 - 6806a1d7bf4cf2be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for Chat_Application.LoginViewController.loginWithGoogle() async -&gt; Swift.Bool"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "14FC2847-493A-4E3F-82E4-1639610B1C4B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "loginWithGoogle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

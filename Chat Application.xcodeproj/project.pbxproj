@@ -26,13 +26,14 @@
 		568EA8AE2B3D72C500FBDFF8 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8AC2B3D72C500FBDFF8 /* NewConversationViewController.swift */; };
 		568EA8AF2B3D72C500FBDFF8 /* NewConversationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EA8AD2B3D72C500FBDFF8 /* NewConversationViewController.xib */; };
 		568EA8B22B3D72E800FBDFF8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8B02B3D72E800FBDFF8 /* ProfileViewController.swift */; };
-		568EA8B32B3D72E800FBDFF8 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EA8B12B3D72E800FBDFF8 /* ProfileViewController.xib */; };
 		568EA8B52B3D738A00FBDFF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8B42B3D738A00FBDFF8 /* MainViewController.swift */; };
 		568EA8B82B3D78A800FBDFF8 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8B62B3D78A800FBDFF8 /* ConversationViewController.swift */; };
 		568EA8BB2B3D951600FBDFF8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8BA2B3D951600FBDFF8 /* UIView.swift */; };
-		56C397C72B442D9600470CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C397C62B442D9600470CDA /* GoogleService-Info.plist */; };
 		56C397C92B4574A200470CDA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C397C82B4574A200470CDA /* DatabaseManager.swift */; };
 		56C397CB2B45771100470CDA /* ChatAppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C397CA2B45771100470CDA /* ChatAppUser.swift */; };
+		56C397CF2B46C88100470CDA /* ProfileActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */; };
+		56C397D02B46C88100470CDA /* ProfileActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */; };
+		56C397D22B4F0C5A00470CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C397D12B4F0C5A00470CDA /* GoogleService-Info.plist */; };
 		85739C29409E57DA72C20D13 /* Pods_Chat_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F83FE7FBA471FED413BA05B /* Pods_Chat_Application.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,13 +79,14 @@
 		568EA8AC2B3D72C500FBDFF8 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		568EA8AD2B3D72C500FBDFF8 /* NewConversationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewConversationViewController.xib; sourceTree = "<group>"; };
 		568EA8B02B3D72E800FBDFF8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		568EA8B12B3D72E800FBDFF8 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		568EA8B42B3D738A00FBDFF8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		568EA8B62B3D78A800FBDFF8 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		568EA8BA2B3D951600FBDFF8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		56C397C62B442D9600470CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56C397C82B4574A200470CDA /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		56C397CA2B45771100470CDA /* ChatAppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUser.swift; sourceTree = "<group>"; };
+		56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionsTableViewCell.swift; sourceTree = "<group>"; };
+		56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileActionsTableViewCell.xib; sourceTree = "<group>"; };
+		56C397D12B4F0C5A00470CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61B618EA8787DBDFD42909DC /* Pods-Chat Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat Application.debug.xcconfig"; path = "Target Support Files/Pods-Chat Application/Pods-Chat Application.debug.xcconfig"; sourceTree = "<group>"; };
 		ECFFA8BFA02562000D25B787 /* Pods-Chat Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat Application.release.xcconfig"; path = "Target Support Files/Pods-Chat Application/Pods-Chat Application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +152,8 @@
 		568EA8652B3D6CA800FBDFF8 /* Chat Application */ = {
 			isa = PBXGroup;
 			children = (
-				56C397C62B442D9600470CDA /* GoogleService-Info.plist */,
+				56C397CC2B46C86C00470CDA /* XIbs */,
+				56C397D12B4F0C5A00470CDA /* GoogleService-Info.plist */,
 				568EA89A2B3D70BD00FBDFF8 /* Resources */,
 				568EA8992B3D70B700FBDFF8 /* ViewModels */,
 				568EA8982B3D70B100FBDFF8 /* Models */,
@@ -236,11 +239,19 @@
 				568EA8A52B3D722400FBDFF8 /* PhotoViewerViewController.xib */,
 				568EA8A92B3D723A00FBDFF8 /* VideoPlayerViewController.xib */,
 				568EA8AD2B3D72C500FBDFF8 /* NewConversationViewController.xib */,
-				568EA8B12B3D72E800FBDFF8 /* ProfileViewController.xib */,
 				568EA86C2B3D6CA800FBDFF8 /* Main.storyboard */,
 				568EA8712B3D6CAA00FBDFF8 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		56C397CC2B46C86C00470CDA /* XIbs */ = {
+			isa = PBXGroup;
+			children = (
+				56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */,
+				56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */,
+			);
+			path = XIbs;
 			sourceTree = "<group>";
 		};
 		B09A74308F058D42ACD7B415 /* Frameworks */ = {
@@ -357,14 +368,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				568EA8B32B3D72E800FBDFF8 /* ProfileViewController.xib in Resources */,
 				568EA89F2B3D71F300FBDFF8 /* LoginViewController.xib in Resources */,
+				56C397D02B46C88100470CDA /* ProfileActionsTableViewCell.xib in Resources */,
 				568EA8A32B3D720E00FBDFF8 /* RegisterViewController.xib in Resources */,
 				568EA8AF2B3D72C500FBDFF8 /* NewConversationViewController.xib in Resources */,
 				568EA8732B3D6CAA00FBDFF8 /* LaunchScreen.storyboard in Resources */,
 				568EA8702B3D6CAA00FBDFF8 /* Assets.xcassets in Resources */,
+				56C397D22B4F0C5A00470CDA /* GoogleService-Info.plist in Resources */,
 				568EA8AB2B3D723A00FBDFF8 /* VideoPlayerViewController.xib in Resources */,
-				56C397C72B442D9600470CDA /* GoogleService-Info.plist in Resources */,
 				568EA86E2B3D6CA800FBDFF8 /* Main.storyboard in Resources */,
 				568EA8A72B3D722400FBDFF8 /* PhotoViewerViewController.xib in Resources */,
 			);
@@ -446,6 +457,7 @@
 				568EA8B22B3D72E800FBDFF8 /* ProfileViewController.swift in Sources */,
 				568EA8692B3D6CA800FBDFF8 /* SceneDelegate.swift in Sources */,
 				568EA8A62B3D722400FBDFF8 /* PhotoViewerViewController.swift in Sources */,
+				56C397CF2B46C88100470CDA /* ProfileActionsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,11 +640,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QC8MN3WX27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chat Application/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Chat App";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera to take profile Image";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photos to upload profile Image";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -660,11 +674,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QC8MN3WX27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Chat Application/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Chat App";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to take a profile picture";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera to take profile Image";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access to select a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please allow photos to upload profile Image";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
