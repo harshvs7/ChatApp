@@ -61,19 +61,21 @@ extension UIViewController {
     
     func showAlert(with title: String, with message: String, with buttonText: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttonText, style: .default) { _ in
-            
+        let action = UIAlertAction(title: buttonText, style: .cancel) { [weak self] _ in
+            guard let strongSelf = self else { return }
             if buttonText.elementsEqual("Dismiss") {
-                self.dismiss(animated: true)
+                alert.dismiss(animated: true)
             }
             if buttonText.elementsEqual("Pop") {
-                self.navigationController?.popViewController(animated: true)
+                strongSelf.navigationController?.popViewController(animated: true)
             }
+            
             
         }
         alert.addAction(action)
-        DispatchQueue.main.async{
-            self.present(alert, animated: true)
+        DispatchQueue.main.async{ [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.present(alert, animated: true)
         }
     }
     func showAlertTwoButton(with title: String, with message: String, with buttonTextOne: String,with buttonTextTwo: String, completion: @escaping ((Bool) -> Void) ) {

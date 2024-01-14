@@ -8,22 +8,29 @@
 import UIKit
 
 class NewConversationViewController: UIViewController {
+    
+    @IBOutlet weak var searchUsers: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: helper functions
+extension NewConversationViewController {
+    private func setupUI() {
+        navigationController?.navigationBar.topItem?.titleView = searchUsers
+        searchUsers.becomeFirstResponder()
     }
-    */
+}
 
+//MARK: SearchBarDelegate
+extension NewConversationViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismiss(animated: true)
+    }
 }

@@ -16,10 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N1i-Wp-cSi">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="N1i-Wp-cSi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FkX-TO-bys"/>
+                            <constraint firstItem="N1i-Wp-cSi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YeA-qR-fet"/>
+                            <constraint firstItem="N1i-Wp-cSi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gQa-W3-nLr"/>
+                            <constraint firstAttribute="bottom" secondItem="N1i-Wp-cSi" secondAttribute="bottom" id="uqe-4e-1sG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="gw7-4H-cXj"/>
+                    <connections>
+                        <outlet property="chatsTableView" destination="N1i-Wp-cSi" id="4rD-8h-6ys"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 import UIKit
 import PhotosUI
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,21 +58,47 @@ extension RegisterViewController {
             return
         }
         
+        spinner.show(in: view)
+        
         DatabaseManager.shared.userExists(with: email, completion: { [weak self] exists in
             guard let strongSelf = self else { return }
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
             guard !exists else {
-                strongSelf.showAlert(with: "Error", with: "User already registered", with: "Dismiss")
+                strongSelf.showAlert(with: "Error", with: "User already registered", with: "Pop")
                 return
             }
             
             
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult, error in
                 guard let strongSelf = self else { return }
-                guard let result = authResult, error == nil else {
+                guard authResult != nil, error == nil else {
                     strongSelf.showAlert(with: "Error", with: error?.localizedDescription ?? "", with: "Dismiss")
                     return
                 }
-                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                let user = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                DatabaseManager.shared.insertUser(with: user, completion: { success in
+                    if success {
+                        //upload image
+                        guard let image = strongSelf.profileImage.image, let data = image.pngData() else {
+                            return
+                        }
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: user.profilePictureFileName, completion: { result in
+                            switch result {
+                                
+                            case .success(let downloadURL):
+                                UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
+                                print( "\(downloadURL)")
+                                
+                            case .failure(let error):
+                                print("error in downloading \(error)")
+                            }
+                        })
+                    }
+                })
                 strongSelf.navigationController?.dismiss(animated: true)
             })
             

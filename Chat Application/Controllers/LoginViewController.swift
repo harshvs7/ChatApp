@@ -9,11 +9,14 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +45,18 @@ extension LoginViewController {
     }
     
     private func login() {
+        
         guard let email = emailTextField.text, let password = passwordTextField.text, !email.isEmpty, !password.isEmpty, password.count >= 6 else {
             self.showAlert(with: "Error", with: "Please enter valid email and password", with: "Dismiss")
             return
         }
-        
+        spinner.show(in: view)
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: { [weak self] authResult, error in
             guard let strongSelf = self else { return }
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
             guard let _ = authResult, error == nil else {
                 strongSelf.showAlert(with: "Error", with: error?.localizedDescription ?? "", with: "Dismiss")
                 return
@@ -82,9 +90,44 @@ extension LoginViewController {
                                                            accessToken: accessToken.tokenString)
             
             let result = try await Auth.auth().signIn(with: credential)
-            let firebaseUser = result.user
-            print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
+            guard let firstName = user.profile?.givenName,
+                  let lastName = user.profile?.familyName,
+                  let email = user.profile?.email else {
+                
+                print("no user info")
+                return true
+            }
+            DatabaseManager.shared.userExists(with: email, completion: { exists in
+                if !exists {
+                    let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                    DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                        if success {
+                            guard let hasImage = user.profile?.hasImage else { return }
+                            if  hasImage {
+                                guard let imageUrl = user.profile?.imageURL(withDimension: 200) else { return }
+                                
+                                URLSession.shared.dataTask(with: imageUrl,completionHandler: { data, _, _ in
+                                    guard let data = data else { return }
+                                    StorageManager.shared.uploadProfilePicture(with: data, fileName: chatUser.profilePictureFileName, completion: { result in
+                                        switch result {
+                                            
+                                        case .success(let downloadURL):
+                                            UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
+                                            print( "\(downloadURL)")
+                                            
+                                        case .failure(let error):
+                                            print("error in downloading \(error)")
+                                        }
+                                    })
+                                }).resume()
+                                
+                            }
+                        }
+                    })
+                }
+            })
             return true
+            
         }
         catch {
             print(error.localizedDescription)

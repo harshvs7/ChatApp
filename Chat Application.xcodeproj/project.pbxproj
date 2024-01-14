@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5626F1E32B4FF93D003BA41D /* SingleChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626F1E12B4FF93D003BA41D /* SingleChatTableViewCell.swift */; };
+		5626F1E42B4FF93D003BA41D /* SingleChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5626F1E22B4FF93D003BA41D /* SingleChatTableViewCell.xib */; };
+		5626F1E72B4FFBA2003BA41D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626F1E52B4FFBA2003BA41D /* ChatViewController.swift */; };
+		5626F1E82B4FFBA2003BA41D /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5626F1E62B4FFBA2003BA41D /* ChatViewController.xib */; };
+		5626F1EA2B4FFDDF003BA41D /* MessageSenderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626F1E92B4FFDDF003BA41D /* MessageSenderStruct.swift */; };
 		568EA8672B3D6CA800FBDFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8662B3D6CA800FBDFF8 /* AppDelegate.swift */; };
 		568EA8692B3D6CA800FBDFF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8682B3D6CA800FBDFF8 /* SceneDelegate.swift */; };
 		568EA86E2B3D6CA800FBDFF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568EA86C2B3D6CA800FBDFF8 /* Main.storyboard */; };
@@ -34,6 +39,7 @@
 		56C397CF2B46C88100470CDA /* ProfileActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */; };
 		56C397D02B46C88100470CDA /* ProfileActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */; };
 		56C397D22B4F0C5A00470CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56C397D12B4F0C5A00470CDA /* GoogleService-Info.plist */; };
+		56DC194A2B53CCA400D90C70 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC19492B53CCA400D90C70 /* StorageManager.swift */; };
 		85739C29409E57DA72C20D13 /* Pods_Chat_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F83FE7FBA471FED413BA05B /* Pods_Chat_Application.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,11 @@
 
 /* Begin PBXFileReference section */
 		2F83FE7FBA471FED413BA05B /* Pods_Chat_Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat_Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5626F1E12B4FF93D003BA41D /* SingleChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatTableViewCell.swift; sourceTree = "<group>"; };
+		5626F1E22B4FF93D003BA41D /* SingleChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleChatTableViewCell.xib; sourceTree = "<group>"; };
+		5626F1E52B4FFBA2003BA41D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5626F1E62B4FFBA2003BA41D /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		5626F1E92B4FFDDF003BA41D /* MessageSenderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderStruct.swift; sourceTree = "<group>"; };
 		568EA8632B3D6CA800FBDFF8 /* Chat Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568EA8662B3D6CA800FBDFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		568EA8682B3D6CA800FBDFF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 		56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionsTableViewCell.swift; sourceTree = "<group>"; };
 		56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileActionsTableViewCell.xib; sourceTree = "<group>"; };
 		56C397D12B4F0C5A00470CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56DC19492B53CCA400D90C70 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		61B618EA8787DBDFD42909DC /* Pods-Chat Application.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat Application.debug.xcconfig"; path = "Target Support Files/Pods-Chat Application/Pods-Chat Application.debug.xcconfig"; sourceTree = "<group>"; };
 		ECFFA8BFA02562000D25B787 /* Pods-Chat Application.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat Application.release.xcconfig"; path = "Target Support Files/Pods-Chat Application/Pods-Chat Application.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +205,7 @@
 				568EA8B02B3D72E800FBDFF8 /* ProfileViewController.swift */,
 				568EA8B62B3D78A800FBDFF8 /* ConversationViewController.swift */,
 				568EA8B42B3D738A00FBDFF8 /* MainViewController.swift */,
+				5626F1E52B4FFBA2003BA41D /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				56C397CA2B45771100470CDA /* ChatAppUser.swift */,
+				5626F1E92B4FFDDF003BA41D /* MessageSenderStruct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +241,7 @@
 				568EA8662B3D6CA800FBDFF8 /* AppDelegate.swift */,
 				568EA8682B3D6CA800FBDFF8 /* SceneDelegate.swift */,
 				56C397C82B4574A200470CDA /* DatabaseManager.swift */,
+				56DC19492B53CCA400D90C70 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -240,6 +255,7 @@
 				568EA8A92B3D723A00FBDFF8 /* VideoPlayerViewController.xib */,
 				568EA8AD2B3D72C500FBDFF8 /* NewConversationViewController.xib */,
 				568EA86C2B3D6CA800FBDFF8 /* Main.storyboard */,
+				5626F1E62B4FFBA2003BA41D /* ChatViewController.xib */,
 				568EA8712B3D6CAA00FBDFF8 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -250,6 +266,8 @@
 			children = (
 				56C397CD2B46C88100470CDA /* ProfileActionsTableViewCell.swift */,
 				56C397CE2B46C88100470CDA /* ProfileActionsTableViewCell.xib */,
+				5626F1E12B4FF93D003BA41D /* SingleChatTableViewCell.swift */,
+				5626F1E22B4FF93D003BA41D /* SingleChatTableViewCell.xib */,
 			);
 			path = XIbs;
 			sourceTree = "<group>";
@@ -370,6 +388,7 @@
 			files = (
 				568EA89F2B3D71F300FBDFF8 /* LoginViewController.xib in Resources */,
 				56C397D02B46C88100470CDA /* ProfileActionsTableViewCell.xib in Resources */,
+				5626F1E82B4FFBA2003BA41D /* ChatViewController.xib in Resources */,
 				568EA8A32B3D720E00FBDFF8 /* RegisterViewController.xib in Resources */,
 				568EA8AF2B3D72C500FBDFF8 /* NewConversationViewController.xib in Resources */,
 				568EA8732B3D6CAA00FBDFF8 /* LaunchScreen.storyboard in Resources */,
@@ -378,6 +397,7 @@
 				568EA8AB2B3D723A00FBDFF8 /* VideoPlayerViewController.xib in Resources */,
 				568EA86E2B3D6CA800FBDFF8 /* Main.storyboard in Resources */,
 				568EA8A72B3D722400FBDFF8 /* PhotoViewerViewController.xib in Resources */,
+				5626F1E42B4FF93D003BA41D /* SingleChatTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +466,9 @@
 			files = (
 				56C397CB2B45771100470CDA /* ChatAppUser.swift in Sources */,
 				568EA89E2B3D71F300FBDFF8 /* LoginViewController.swift in Sources */,
+				5626F1E72B4FFBA2003BA41D /* ChatViewController.swift in Sources */,
+				56DC194A2B53CCA400D90C70 /* StorageManager.swift in Sources */,
+				5626F1EA2B4FFDDF003BA41D /* MessageSenderStruct.swift in Sources */,
 				568EA8A22B3D720E00FBDFF8 /* RegisterViewController.swift in Sources */,
 				568EA8BB2B3D951600FBDFF8 /* UIView.swift in Sources */,
 				568EA8B82B3D78A800FBDFF8 /* ConversationViewController.swift in Sources */,
@@ -455,6 +478,7 @@
 				568EA8672B3D6CA800FBDFF8 /* AppDelegate.swift in Sources */,
 				56C397C92B4574A200470CDA /* DatabaseManager.swift in Sources */,
 				568EA8B22B3D72E800FBDFF8 /* ProfileViewController.swift in Sources */,
+				5626F1E32B4FF93D003BA41D /* SingleChatTableViewCell.swift in Sources */,
 				568EA8692B3D6CA800FBDFF8 /* SceneDelegate.swift in Sources */,
 				568EA8A62B3D722400FBDFF8 /* PhotoViewerViewController.swift in Sources */,
 				56C397CF2B46C88100470CDA /* ProfileActionsTableViewCell.swift in Sources */,
@@ -551,6 +575,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -565,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -614,6 +639,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -622,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
