@@ -91,6 +91,7 @@ extension RegisterViewController {
                                 
                             case .success(let downloadURL):
                                 UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
+                                AppDefaults.shared.profilePicture = downloadURL
                                 print( "\(downloadURL)")
                                 
                             case .failure(let error):
@@ -99,6 +100,7 @@ extension RegisterViewController {
                         })
                     }
                 })
+                AppDefaults.shared.email = email
                 strongSelf.navigationController?.dismiss(animated: true)
             })
             

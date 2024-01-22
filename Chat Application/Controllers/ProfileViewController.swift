@@ -8,12 +8,14 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import JGProgressHUD
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var actionTableView: UITableView!
     
     private var actions = ["Log out"]
+    private let spinner = JGProgressHUD(style: .dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,25 @@ class ProfileViewController: UIViewController {
         actionTableView.delegate = self
         actionTableView.dataSource = self
         actionTableView.register(UINib(nibName: ProfileActionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ProfileActionsTableViewCell.identifier)
+        actionTableView.register(UINib(nibName: ProfileImageHeaderView.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: ProfileImageHeaderView.identifier)
     }
+}
+
+//MARK: helper functions
+extension ProfileViewController {
+    
+    private func downloadProfileImage( with url: URL, with imageView: UIImageView) {
+        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            guard let data = data, error == nil else { return }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                imageView.image = image
+                self.spinner.dismiss()
+            }
+        }).resume()
+    }
+    
 }
 
 //MARK: TableView delegate methods
@@ -61,4 +81,30 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         })
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileImageHeaderView.identifier) as? ProfileImageHeaderView
+        else {
+            return UIView()
+        }
+        guard let email = AppDefaults.shared.email else { return UIView() }
+         let safeEmail = DatabaseManager.shared.safeEmail(with: email)
+        let path = "images/" + safeEmail + "_profile_picture.png"
+        self.spinner.show(in: view)
+        StorageManager.shared.downloadURL(with: path, completion: { [weak self] result in
+            switch result {
+            case .success(let url):
+                self?.downloadProfileImage(with: url, with: header.profileImageView)
+            case .failure(let error):
+                print("error has occured while downloading image ......\(error)")
+            }
+            
+        })
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let email = AppDefaults.shared.email else { return 0 }
+        return 150
+    }
 }
+

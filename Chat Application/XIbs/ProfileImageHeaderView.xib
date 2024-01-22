@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfileImageHeaderView" customModule="Chat_Application" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRb-Ze-Q3T">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-hr-2rL">
+                            <rect key="frame" x="121.66666666666669" y="26" width="150" height="148.66666666666669"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="9NT-FU-476"/>
+                                <constraint firstAttribute="width" constant="150" id="udc-P4-TQK"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="75"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="tI1-hr-2rL" firstAttribute="centerX" secondItem="xRb-Ze-Q3T" secondAttribute="centerX" id="ZY1-CW-bsc"/>
+                        <constraint firstItem="tI1-hr-2rL" firstAttribute="centerY" secondItem="xRb-Ze-Q3T" secondAttribute="centerY" id="qtS-A8-SYl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xRb-Ze-Q3T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FzS-d3-Ckh"/>
+                <constraint firstAttribute="trailing" secondItem="xRb-Ze-Q3T" secondAttribute="trailing" id="JVJ-e3-zHS"/>
+                <constraint firstItem="xRb-Ze-Q3T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WVs-Kb-2I7"/>
+                <constraint firstAttribute="bottom" secondItem="xRb-Ze-Q3T" secondAttribute="bottom" id="Zc1-bS-xx3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="profileImageView" destination="tI1-hr-2rL" id="8pC-Ax-8Et"/>
+            </connections>
+            <point key="canvasLocation" x="67.938931297709928" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

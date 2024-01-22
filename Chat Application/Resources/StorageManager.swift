@@ -19,7 +19,7 @@ final class StorageManager {
     private let storage = Storage.storage().reference()
     
     public typealias UploadPictureCompletion = (Result<String,Error>) -> Void
-    
+    public typealias DownloadPictureCompletion = (Result<URL,Error>) -> Void
     
     ///Uploads profile picture and return the url to download
     public func uploadProfilePicture ( with data: Data, fileName: String, completion: @escaping UploadPictureCompletion ) {
@@ -37,6 +37,21 @@ final class StorageManager {
                 let urlString = url.absoluteString
                 completion(.success(urlString))
             })
+        })
+    }
+    
+    ///Gets the profilePicture back as an url
+    public func downloadURL( with path: String, completion: @escaping DownloadPictureCompletion ) {
+        let reference = storage.child(path)
+        
+        reference.downloadURL(completion: { url, error in
+            guard let url = url, error == nil else {
+                completion(.failure(StorageErrors.failedToGetDownloadUrl))
+                return
+            }
+            
+            completion(.success(url))
+            
         })
     }
 }

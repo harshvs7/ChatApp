@@ -61,6 +61,7 @@ extension LoginViewController {
                 strongSelf.showAlert(with: "Error", with: error?.localizedDescription ?? "", with: "Dismiss")
                 return
             }
+            AppDefaults.shared.email = email
             strongSelf.navigationController?.dismiss(animated: true)
         })
     }
@@ -97,6 +98,7 @@ extension LoginViewController {
                 print("no user info")
                 return true
             }
+            AppDefaults.shared.email = email
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
@@ -112,7 +114,7 @@ extension LoginViewController {
                                         switch result {
                                             
                                         case .success(let downloadURL):
-                                            UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
+                                            AppDefaults.shared.profilePicture = downloadURL
                                             print( "\(downloadURL)")
                                             
                                         case .failure(let error):

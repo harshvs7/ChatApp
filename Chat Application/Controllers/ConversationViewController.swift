@@ -41,8 +41,24 @@ extension ConversationViewController {
     
     @objc private func didTapCompose() {
         let vc = NewConversationViewController()
+        vc.completion = { [weak self] result in
+            self?.createNewConversation(with: result)
+        }
         let viewController = UINavigationController(rootViewController: vc)
         present(viewController, animated: true)
+    }
+    
+    private func createNewConversation(with result: [String: String]) {
+        guard let name = result["name"],
+              let email = result["safe_email"] else {
+            
+                return
+        }
+        let viewController = ChatViewController(with: email)
+        viewController.title = name
+        viewController.isNewConversation = true 
+        viewController.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -63,9 +79,9 @@ extension ConversationViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let viewController = ChatViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: false)
+//        let viewController = ChatViewController()
+//        self.navigationController?.pushViewController(viewController, animated: true)
+//    }
 }
