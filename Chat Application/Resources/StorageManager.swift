@@ -23,12 +23,12 @@ final class StorageManager {
     
     ///Uploads profile picture and return the url to download
     public func uploadProfilePicture ( with data: Data, fileName: String, completion: @escaping UploadPictureCompletion ) {
-        storage.child("images/\(fileName)").putData(data, metadata: nil, completion: { metadata, error in
+        storage.child("images/\(fileName)").putData(data, metadata: nil, completion: { [weak self] metadata, error in
             guard  error == nil else {
                 completion(.failure(StorageErrors.failedToUpload ))
                 return
             }
-            self.storage.child("images/\(fileName)").downloadURL(completion: { url, error in
+            self?.storage.child("images/\(fileName)").downloadURL(completion: { url, error in
                 
                 guard let url = url else {
                     completion(.failure(StorageErrors.failedToGetDownloadUrl))
@@ -54,4 +54,47 @@ final class StorageManager {
             
         })
     }
+    
+    ///upload image to be sent in conversations
+    public func uploadMessagePhoto( with data: Data, fileName: String, completion: @escaping UploadPictureCompletion) {
+        storage.child("messages_images/\(fileName)").putData(data,metadata: nil,completion: { [weak self] metadata, error in
+            guard error == nil else {
+                completion(.failure(StorageErrors.failedToUpload ))
+                return
+            }
+            self?.storage.child("messages_images/\(fileName)").downloadURL(completion: { url, error in
+                
+                guard let url = url else {
+                    completion(.failure(StorageErrors.failedToGetDownloadUrl))
+                    return
+                }
+                let urlString = url.absoluteString
+                completion(.success(urlString))
+            })
+            
+            
+        })
+    }
+    
+    ///upload video to be sent in conversations
+    public func uploadMessageVideo( with fileUrl: URL, fileName: String, completion: @escaping UploadPictureCompletion) {
+        storage.child("messages_videos/\(fileName)").putFile(from: fileUrl, metadata: nil,completion: { [weak self] metadata, error in
+            guard error == nil else {
+                completion(.failure(StorageErrors.failedToUpload ))
+                return
+            }
+            self?.storage.child("messages_videos/\(fileName)").downloadURL(completion: { url, error in
+                
+                guard let url = url else {
+                    completion(.failure(StorageErrors.failedToGetDownloadUrl))
+                    return
+                }
+                let urlString = url.absoluteString
+                completion(.success(urlString))
+            })
+            
+            
+        })
+    }
+    
 }

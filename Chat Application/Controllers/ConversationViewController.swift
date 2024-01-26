@@ -12,12 +12,15 @@ class ConversationViewController: UIViewController {
     
     @IBOutlet weak var chatsTableView: UITableView!
     
+    private var conversations = [Conversation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         validateUser()
+        startListeningForConversations()
+
     }
-    
     
 }
 
@@ -36,7 +39,7 @@ extension ConversationViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapCompose))
         chatsTableView.delegate = self
         chatsTableView.dataSource = self
-        chatsTableView.register(UINib(nibName: SingleChatTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SingleChatTableViewCell.identifier)
+        chatsTableView.register(UINib(nibName: ConversationTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ConversationTableViewCell.identifier)
     }
     
     @objc private func didTapCompose() {
@@ -54,34 +57,63 @@ extension ConversationViewController {
             
                 return
         }
-        let viewController = ChatViewController(with: email)
+        let viewController = ChatViewController(with: email,with: name, with: nil)
         viewController.title = name
         viewController.isNewConversation = true 
         viewController.navigationItem.largeTitleDisplayMode = .never
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    private func startListeningForConversations() {
+        guard let email = AppDefaults.shared.email else {
+            return
+        }
+        let safeEmail = DatabaseManager.safeEmail(with: email)
+        DatabaseManager.shared.getAllConversations(with: safeEmail, completion:  { [weak self] result in
+            switch result {
+            case .success(let conversations):
+                guard !conversations.isEmpty else {
+                    return
+                }
+                self?.conversations = conversations
+                DispatchQueue.main.async {
+                    self?.chatsTableView.reloadData()
+                }
+            case .failure(let error):
+                print(" error occured in fetching all convos \(error)")
+            }
+            
+        })
+        
+    }
+    
 }
 
 //MARK: TableView delegates
 
 extension ConversationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SingleChatTableViewCell.identifier, for: indexPath) as? SingleChatTableViewCell 
+        let model = conversations[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConversationTableViewCell.identifier, for: indexPath) as? ConversationTableViewCell
         else {
             return UITableViewCell()
         }
         
-        cell.ChatName.text = "Chat 1"
+        cell.configure(with: model)
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-//        let viewController = ChatViewController()
-//        self.navigationController?.pushViewController(viewController, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let model = conversations[indexPath.row]
+        let viewController = ChatViewController(with: model.otherUserEmail,with: model.name, with: model.id)
+        viewController.title = model.name
+        viewController.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
+ 

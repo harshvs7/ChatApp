@@ -92,6 +92,8 @@ extension RegisterViewController {
                             case .success(let downloadURL):
                                 UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
                                 AppDefaults.shared.profilePicture = downloadURL
+                                AppDefaults.shared.email = email
+                                AppDefaults.shared.name = firstName + lastName
                                 print( "\(downloadURL)")
                                 
                             case .failure(let error):
@@ -100,7 +102,7 @@ extension RegisterViewController {
                         })
                     }
                 })
-                AppDefaults.shared.email = email
+                
                 strongSelf.navigationController?.dismiss(animated: true)
             })
             
@@ -110,7 +112,7 @@ extension RegisterViewController {
     }
     
     @objc private func profileImageTapped() {
-        preentPhotoActionSheet()
+        presentPhotoActionSheet()
     }
 }
 
@@ -145,7 +147,7 @@ extension RegisterViewController: UITextFieldDelegate {
 //MARK: ProfileImage Picker Delegates
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
     
-    private func preentPhotoActionSheet() {
+    private func presentPhotoActionSheet() {
         let actionSheet = UIAlertController(title: "Profile Picture",
                                             message: "How would you like to choose your profile photo",
                                             preferredStyle: .actionSheet)
@@ -198,13 +200,13 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         guard let item = results.first?.itemProvider else { return }
         
         if item.canLoadObject(ofClass: UIImage.self) {
-            item.loadObject(ofClass: UIImage.self) { image, error in
+            item.loadObject(ofClass: UIImage.self) { [weak self] image, error in
                 if let error {
-                    self.showAlert(with: "Error", with: error.localizedDescription, with: "Dismiss")
+                    self?.showAlert(with: "Error", with: error.localizedDescription, with: "Dismiss")
                 }
                 if let image = image as? UIImage {
                     DispatchQueue.main.async {
-                        self.profileImage.image = image
+                        self?.profileImage.image = image
                     }
                 }
             }

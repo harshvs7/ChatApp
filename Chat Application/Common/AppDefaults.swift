@@ -11,6 +11,7 @@ import Foundation
 struct DefaultValues {
     static let email = "email"
     static let profilePicture = "profile_picture"
+    static let name = "name"
 }
 
 class AppDefaults {
@@ -35,4 +36,14 @@ class AppDefaults {
             userDefaults.synchronize()
         }
     }
+    var name: String? {
+        get {
+            return userDefaults.string(forKey: DefaultValues.name)
+        }
+        set {
+            userDefaults.setValue(newValue, forKey: DefaultValues.name)
+            userDefaults.synchronize()
+        }
+    }
+    
 }

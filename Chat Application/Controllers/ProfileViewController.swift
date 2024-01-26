@@ -22,6 +22,11 @@ class ProfileViewController: UIViewController {
         setUpUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        actionTableView.reloadData()
+    }
+    
     private func setUpUI() {
         actionTableView.delegate = self
         actionTableView.dataSource = self
@@ -70,7 +75,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                     let viewController = LoginViewController()
                     let nav = UINavigationController(rootViewController: viewController)
                     nav.modalPresentationStyle = .fullScreen
-                    strongSelf.present(nav,animated: true)
+                    strongSelf.present(nav,animated: true,completion: {
+                        AppDefaults.shared.email = nil
+                        AppDefaults.shared.profilePicture = nil
+                        AppDefaults.shared.name = nil
+                    })
+                    
                 } catch {
                     print("error")
                 }
@@ -87,7 +97,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return UIView()
         }
         guard let email = AppDefaults.shared.email else { return UIView() }
-         let safeEmail = DatabaseManager.shared.safeEmail(with: email)
+         let safeEmail = DatabaseManager.safeEmail(with: email)
         let path = "images/" + safeEmail + "_profile_picture.png"
         self.spinner.show(in: view)
         StorageManager.shared.downloadURL(with: path, completion: { [weak self] result in

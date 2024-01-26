@@ -61,6 +61,20 @@ extension LoginViewController {
                 strongSelf.showAlert(with: "Error", with: error?.localizedDescription ?? "", with: "Dismiss")
                 return
             }
+            let safeEmail = DatabaseManager.safeEmail(with: email)
+            DatabaseManager.shared.getInfoFor(with: safeEmail, completion: { result in
+                switch result {
+                case .success(let value):
+                    guard let userData = value as? [String: Any],
+                          let firstName = userData["first_name"] as? String,
+                          let lastName = userData["last_name"] as? String else {
+                        return
+                    }
+                    AppDefaults.shared.name = firstName + lastName
+                case .failure(let error):
+                    print("failed to fetch the error \(error)")
+                }
+            })
             AppDefaults.shared.email = email
             strongSelf.navigationController?.dismiss(animated: true)
         })
@@ -99,6 +113,7 @@ extension LoginViewController {
                 return true
             }
             AppDefaults.shared.email = email
+            AppDefaults.shared.name = firstName + lastName
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
