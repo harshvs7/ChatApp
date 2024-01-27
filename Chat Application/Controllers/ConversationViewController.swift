@@ -51,12 +51,9 @@ extension ConversationViewController {
         present(viewController, animated: true)
     }
     
-    private func createNewConversation(with result: [String: String]) {
-        guard let name = result["name"],
-              let email = result["safe_email"] else {
-            
-                return
-        }
+    private func createNewConversation(with result: SearchUserResult) {
+        let name = result.name
+        let email = result.email
         let viewController = ChatViewController(with: email,with: name, with: nil)
         viewController.title = name
         viewController.isNewConversation = true 

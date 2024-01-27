@@ -7,110 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A8C7FF0B-1D30-4E83-A051-4A38389AA518"
+            uuid = "AD88A367-0F42-4C0B-8A51-F73C14CC46EA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat Application/Controllers/ChatViewController.swift"
+            filePath = "Chat Application/Controllers/NewConversationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "picker(_:didFinishPicking:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F7B1D421-54D2-4C82-9FA7-5EAEA40403B3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chat Application/Controllers/ChatViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3E1B3794-2E29-42DD-8AF5-58D7E5BF446B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chat Application/Controllers/ChatViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "uploadVideo(asset:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C6695A56-9C66-47B3-9001-331999C4ACA5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Chat Application/Controllers/ChatViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C6695A56-9C66-47B3-9001-331999C4ACA5 - 887f82f1fcbe39b6"
+                  uuid = "AD88A367-0F42-4C0B-8A51-F73C14CC46EA - a12efa102811abe3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Chat_Application.ChatViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  symbolName = "Chat_Application.NewConversationViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
                   moduleName = "Chat Application"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/ChatViewController.swift"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "608">
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "508">
                </Location>
                <Location
-                  uuid = "C6695A56-9C66-47B3-9001-331999C4ACA5 - 887f82f1fcbe39b6"
+                  uuid = "AD88A367-0F42-4C0B-8A51-F73C14CC46EA - a12efa102811ab0c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Chat_Application.ChatViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  symbolName = "Chat_Application.NewConversationViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
                   moduleName = "Chat Application"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/ChatViewController.swift"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "664">
-               </Location>
-               <Location
-                  uuid = "C6695A56-9C66-47B3-9001-331999C4ACA5 - 887f82f1fcbe39b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Chat_Application.ChatViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
-                  moduleName = "Chat Application"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/ChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "960">
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "848">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -118,49 +55,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9306DE49-1FA4-4525-B215-4BD7293F9402"
+            uuid = "F4771A98-4830-41E8-93B1-51C2F2648E07"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Chat Application/Controllers/ChatViewController.swift"
+            filePath = "Chat Application/Resources/DatabaseManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "uploadVideo(asset:)"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "sendMessage(conversationId:otherUserEmail:name:newMessage:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "269816AE-3955-44D1-B647-6A1852C3C95C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/NewConversationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "updateUI()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9306DE49-1FA4-4525-B215-4BD7293F9402 - b28dea13b8de8188"
+                  uuid = "269816AE-3955-44D1-B647-6A1852C3C95C - edbf5970b84cb271"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Chat_Application.ChatViewController.uploadVideo(asset: Foundation.URL) -&gt; ()"
+                  symbolName = "Chat_Application.NewConversationViewController.updateUI() -&gt; ()"
                   moduleName = "Chat Application"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/ChatViewController.swift"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "292"
-                  endingLineNumber = "292"
-                  offsetFromSymbolStart = "1076">
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "240">
                </Location>
                <Location
-                  uuid = "9306DE49-1FA4-4525-B215-4BD7293F9402 - 4270e30d34fdf18c"
+                  uuid = "269816AE-3955-44D1-B647-6A1852C3C95C - edbf5970b84cb271"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in Chat_Application.ChatViewController.uploadVideo(asset: Foundation.URL) -&gt; ()"
+                  symbolName = "Chat_Application.NewConversationViewController.updateUI() -&gt; ()"
                   moduleName = "Chat Application"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/ChatViewController.swift"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "292"
-                  endingLineNumber = "292"
-                  offsetFromSymbolStart = "736">
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "108">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40127495-0624-4D97-96FB-8349AA3FE9BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/NewConversationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "filterUser(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40127495-0624-4D97-96FB-8349AA3FE9BE - bafaac4d93f42885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chat_Application.NewConversationViewController.filterUser(with: Swift.String) -&gt; ()"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "40127495-0624-4D97-96FB-8349AA3FE9BE - bafaac4d93f42885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chat_Application.NewConversationViewController.filterUser(with: Swift.String) -&gt; ()"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "40127495-0624-4D97-96FB-8349AA3FE9BE - bafaac4d93f42885"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Chat_Application.NewConversationViewController.filterUser(with: Swift.String) -&gt; ()"
+                  moduleName = "Chat Application"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/harshvardhansharma/Documents/Chat%20Application/Chat%20Application/Controllers/NewConversationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A57E1CF2-F2AD-4BF2-A20D-307793765A29"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat Application/Controllers/ConversationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "startListeningForConversations()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,6 +15,9 @@
 		564FC28F2B60089100F05C99 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564FC28D2B60089100F05C99 /* ConversationTableViewCell.swift */; };
 		564FC2902B60089100F05C99 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 564FC28E2B60089100F05C99 /* ConversationTableViewCell.xib */; };
 		564FC2922B600DF300F05C99 /* ConversationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564FC2912B600DF300F05C99 /* ConversationStruct.swift */; };
+		568E47A92B65512200588430 /* NewConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568E47A82B65512200588430 /* NewConversationTableViewCell.xib */; };
+		568E47AB2B65512900588430 /* NewConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E47AA2B65512900588430 /* NewConversationTableViewCell.swift */; };
+		568E47AD2B65518700588430 /* SearchUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E47AC2B65518700588430 /* SearchUserResult.swift */; };
 		568EA8672B3D6CA800FBDFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8662B3D6CA800FBDFF8 /* AppDelegate.swift */; };
 		568EA8692B3D6CA800FBDFF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EA8682B3D6CA800FBDFF8 /* SceneDelegate.swift */; };
 		568EA86E2B3D6CA800FBDFF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568EA86C2B3D6CA800FBDFF8 /* Main.storyboard */; };
@@ -76,6 +79,9 @@
 		564FC28D2B60089100F05C99 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		564FC28E2B60089100F05C99 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationTableViewCell.xib; sourceTree = "<group>"; };
 		564FC2912B600DF300F05C99 /* ConversationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationStruct.swift; sourceTree = "<group>"; };
+		568E47A82B65512200588430 /* NewConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewConversationTableViewCell.xib; sourceTree = "<group>"; };
+		568E47AA2B65512900588430 /* NewConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewConversationTableViewCell.swift; sourceTree = "<group>"; };
+		568E47AC2B65518700588430 /* SearchUserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserResult.swift; sourceTree = "<group>"; };
 		568EA8632B3D6CA800FBDFF8 /* Chat Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		568EA8662B3D6CA800FBDFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		568EA8682B3D6CA800FBDFF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +243,7 @@
 				56C397CA2B45771100470CDA /* ChatAppUserStruct.swift */,
 				5626F1E92B4FFDDF003BA41D /* MessageSenderStruct.swift */,
 				564FC2912B600DF300F05C99 /* ConversationStruct.swift */,
+				568E47AC2B65518700588430 /* SearchUserResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +292,8 @@
 				56DC19522B544E9A00D90C70 /* ProfileImageHeaderView.xib */,
 				564FC28D2B60089100F05C99 /* ConversationTableViewCell.swift */,
 				564FC28E2B60089100F05C99 /* ConversationTableViewCell.xib */,
+				568E47A82B65512200588430 /* NewConversationTableViewCell.xib */,
+				568E47AA2B65512900588430 /* NewConversationTableViewCell.swift */,
 			);
 			path = XIbs;
 			sourceTree = "<group>";
@@ -414,6 +423,7 @@
 			files = (
 				568EA89F2B3D71F300FBDFF8 /* LoginViewController.xib in Resources */,
 				56C397D02B46C88100470CDA /* ProfileActionsTableViewCell.xib in Resources */,
+				568E47A92B65512200588430 /* NewConversationTableViewCell.xib in Resources */,
 				564FC2902B60089100F05C99 /* ConversationTableViewCell.xib in Resources */,
 				5626F1E82B4FFBA2003BA41D /* ChatViewController.xib in Resources */,
 				568EA8A32B3D720E00FBDFF8 /* RegisterViewController.xib in Resources */,
@@ -495,10 +505,12 @@
 				56DC194D2B54275F00D90C70 /* AppDefaults.swift in Sources */,
 				56C397CB2B45771100470CDA /* ChatAppUserStruct.swift in Sources */,
 				568EA89E2B3D71F300FBDFF8 /* LoginViewController.swift in Sources */,
+				568E47AD2B65518700588430 /* SearchUserResult.swift in Sources */,
 				5626F1E72B4FFBA2003BA41D /* ChatViewController.swift in Sources */,
 				56DC194A2B53CCA400D90C70 /* StorageManager.swift in Sources */,
 				5626F1EA2B4FFDDF003BA41D /* MessageSenderStruct.swift in Sources */,
 				568EA8A22B3D720E00FBDFF8 /* RegisterViewController.swift in Sources */,
+				568E47AB2B65512900588430 /* NewConversationTableViewCell.swift in Sources */,
 				568EA8BB2B3D951600FBDFF8 /* UIView.swift in Sources */,
 				568EA8B82B3D78A800FBDFF8 /* ConversationViewController.swift in Sources */,
 				568EA8B52B3D738A00FBDFF8 /* MainViewController.swift in Sources */,

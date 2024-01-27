@@ -16,9 +16,9 @@ class NewConversationViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
     private var users = [[String: String]]()
-    private var results = [[String: String]]()
+    private var results = [SearchUserResult]()
     private var hasFetched = false
-    public var completion: (([String:String] ) -> (Void))?
+    public var completion: ((SearchUserResult  ) -> (Void))?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ extension NewConversationViewController {
     private func setupUI() {
         userTableView.delegate = self
         userTableView.dataSource = self
-        userTableView.register(UINib(nibName: SingleChatTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SingleChatTableViewCell.identifier)
+        userTableView.register(UINib(nibName: NewConversationTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NewConversationTableViewCell.identifier)
         navigationController?.navigationBar.topItem?.titleView = searchUsers
         searchUsers.becomeFirstResponder()
     }
@@ -47,6 +47,7 @@ extension NewConversationViewController {
                     strongSelf.users = userCollection
                     strongSelf.hasFetched = true
                     strongSelf.filterUser(with: query)
+                    strongSelf.updateUI()
                     print("Aagya users/.......\(strongSelf.users)")
                 case .failure(let error):
                     print("Error occured while fetching users .... \(error)")
@@ -55,17 +56,24 @@ extension NewConversationViewController {
         }
     }
     private func filterUser(with term: String) {
-        guard hasFetched else { return }
+        guard let email = AppDefaults.shared.email, hasFetched else { return }
+        let safeSenderEmail = DatabaseManager.safeEmail(with: email)
         self.spinner.dismiss()
-        let results: [[String: String]] = self.users.filter({
+        let results: [SearchUserResult] = self.users.filter({
+            guard let email = $0["email"], email != safeSenderEmail else { return false }
             guard let name = $0["name"]?.lowercased() else {
                 return false
             }
             return name.hasPrefix(term.lowercased())
+        }).compactMap({
+            guard let email = $0["email"], let name = $0["name"] else {
+                return nil
+            }
+            return SearchUserResult(name: name, email: email )
         })
         self.results = results
         print("Aagya resultttt/.......\(results)")
-        updateUI()
+        
     }
     private func updateUI() {
         if results.isEmpty {
@@ -101,10 +109,11 @@ extension NewConversationViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SingleChatTableViewCell.identifier) as? SingleChatTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewConversationTableViewCell.identifier) as? NewConversationTableViewCell else {
             return UITableViewCell()
         }
-        cell.ChatName.text = results[indexPath.row]["name"]
+        let model = results[indexPath.row]
+        cell.configure(with: model)
         return cell
     }
     

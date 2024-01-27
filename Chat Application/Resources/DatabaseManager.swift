@@ -343,9 +343,9 @@ extension DatabaseManager {
                     kind = .photo(media)
                 } else if type == "video" {
                     guard let url = URL(string: content),
-                          let placeholder = UIImage(systemName: "play") else { return nil }
+                          let placeholder = UIImage(systemName: "play.fill") else { return nil }
                     let media = Media(url: url, image: nil , placeholderImage: placeholder, size: CGSize(width: 300, height: 300))
-                    kind = .photo(media)
+                    kind = .video(media)
                 }
                 guard let finalKind = kind else { return nil }
                 let sender = Sender(senderId: senderEmail, photoUrl: "", displayName: name)

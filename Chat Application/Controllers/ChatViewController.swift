@@ -10,6 +10,8 @@ import PhotosUI
 import MessageKit
 import InputBarAccessoryView
 import SDWebImage
+//import AVFoundation
+import AVKit
 
 class ChatViewController: MessagesViewController {
     
@@ -150,11 +152,11 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                             message: "Select the source",
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
-            self?.openCamera( )
+            self?.openCamera(video: false)
             
         }))
         actionSheet.addAction(UIAlertAction(title: "Photo Library  ", style: .default, handler: { [weak self] _ in
-            self?.openPhotoLibrary()
+            self?.openPhotoLibrary(video: false)
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actionSheet,animated: true)
@@ -165,31 +167,37 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                             message: "Select the source",
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { [weak self] _ in
-            self?.openCamera( )
+            self?.openCamera(video: true)
             
         }))
         actionSheet.addAction(UIAlertAction(title: "Library  ", style: .default, handler: { [weak self] _ in
-            self?.openPhotoLibrary()
+            self?.openPhotoLibrary(video: true)
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actionSheet,animated: true)
     }
     
-    private func openCamera() {
+    private func openCamera(video: Bool) {
         
         let cameraVC = UIImagePickerController()
         cameraVC.delegate = self
         cameraVC.sourceType = .camera
         cameraVC.allowsEditing = true
-        cameraVC.mediaTypes = ["public.movie"]
-        cameraVC.videoQuality = .typeMedium
+        if video {
+            cameraVC.mediaTypes = ["public.movie"]
+            cameraVC.videoQuality = .typeMedium
+        }
         present(cameraVC,animated: true)
     }
     
-    private func openPhotoLibrary() {
+    private func openPhotoLibrary(video: Bool) {
         
         var configuration = PHPickerConfiguration()
-        configuration.filter = .any(of: [.images, .videos])
+        if video {
+            configuration.filter = .any(of: [.images, .videos])
+        } else {
+            configuration.filter = .images
+        }
         configuration.selectionLimit = 1
         let photoVC = PHPickerViewController(configuration: configuration)
         photoVC.delegate = self
@@ -269,14 +277,14 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                                    newMessage: message,
                                                    completion: { success in
                     if success {
-                        print( "sent the Video messgae")
+                        print( "sent the Photo messgae")
                     } else {
-                        print(" failed to send the Video message")
+                        print(" failed to send the Photo message")
                     }
                 })
                 
             case .failure(let error):
-                print("error in upload the message video \(error)")
+                print("error in upload the message Photo \(error)")
             }
         })
     }
@@ -312,14 +320,14 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                                    newMessage: message,
                                                    completion: { success in
                     if success {
-                        print( "sent the photo messgae")
+                        print( "sent the Video messgae")
                     } else {
-                        print(" failed to send the photo message")
+                        print(" failed to send the Video message")
                     }
                 })
                 
             case .failure(let error):
-                print("error in upload the message photo \(error)")
+                print("error in upload the message Video \(error)")
             }
         })
     }
@@ -361,10 +369,18 @@ extension ChatViewController: MessageCellDelegate {
         guard let indexPath = messagesCollectionView.indexPath(for: cell) else { return }
         let message = messages[indexPath.section]
         switch message.kind {
+            
         case .photo(let mediaItem):
             guard let url = mediaItem.url else { return }
             let vc = PhotoViewerViewController(url: url)
             self.navigationController?.pushViewController(vc, animated: true)
+            
+        case .video(let mediaItem):
+            guard let videoUrl = mediaItem.url else { return }
+            let vc = AVPlayerViewController()
+            vc.player = AVPlayer(url: videoUrl)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         default:
             break
         }
