@@ -7,6 +7,19 @@
 
 import UIKit
 
+
+enum ProfileTableType {
+    case info
+    case logout
+}
+
+struct ProfileTableModel {
+    let viewModel: ProfileTableType
+    let title: String
+    let handler: (() -> Void)?
+}
+
+
 class ProfileActionsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var actionLabel: UILabel!
@@ -19,10 +32,16 @@ class ProfileActionsTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    public func setUp(model: ProfileTableModel) {
+        actionLabel.text = model.title
+        switch model.viewModel {
+        case .info:
+            actionLabel.textAlignment = .left
+            actionLabel.textColor = .link
+        case .logout:
+            actionLabel.textAlignment = .center
+            actionLabel.textColor = .red
+        }
     }
     
 }

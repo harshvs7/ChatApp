@@ -18,25 +18,21 @@ class ConversationTableViewCell: UITableViewCell {
 
     static let identifier = String(describing: ConversationTableViewCell.self)
     
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-////        userImageView.cornerRadius = userImageView.frame.width / 2
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.userImageView.cornerRadius = self.userImageView.frame.height / 2
     }
     
     public func configure(with model: Conversation) {
         let path = "images/\(model.otherUserEmail)_profile_picture.png"
-        self.userNameLabel.text = model.name
-        self.userMessageLabel.text = model.latestMessage.message
-        self.messageTimeLabel.text = String(model.latestMessage.date.split(separator: " ")[2].prefix(5))
+        userNameLabel.text = model.name
+        
+        if model.latestMessage.type == "text" {
+            userMessageLabel.text = model.latestMessage.message
+        } else {
+            userMessageLabel.text = model.latestMessage.type
+        }
+        messageTimeLabel.text = String(model.latestMessage.date.split(separator: " ")[2].prefix(5))
         StorageManager.shared.downloadURL(with: path, completion: { [weak self] result in
             switch result {
             case .success(let url):

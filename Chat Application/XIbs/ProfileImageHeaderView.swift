@@ -11,4 +11,9 @@ class ProfileImageHeaderView: UITableViewHeaderFooterView {
     
     @IBOutlet weak var profileImageView: UIImageView!
     static let identifier = String(describing: ProfileImageHeaderView.self)
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        profileImageView.makeCircleRound()
+    }
 }

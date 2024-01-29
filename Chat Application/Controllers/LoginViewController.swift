@@ -13,14 +13,14 @@ import JGProgressHUD
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     private let spinner = JGProgressHUD(style: .dark)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpUI()
+        setUpUI()
     }
     
 }
@@ -29,11 +29,11 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     private func setUpUI(){
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        self.title = "Log In"
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        title = "Log In"
+        navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register",
                                                                  style: .done,
                                                                  target: self,
                                                                  action: #selector(btnRegisterTapped))
@@ -41,13 +41,13 @@ extension LoginViewController {
     
     @objc private func btnRegisterTapped() {
         let viewController = RegisterViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func login() {
         
         guard let email = emailTextField.text, let password = passwordTextField.text, !email.isEmpty, !password.isEmpty, password.count >= 6 else {
-            self.showAlert(with: "Error", with: "Please enter valid email and password", with: "Dismiss")
+            showAlert(with: "Error", with: "Please enter valid email and password", with: "Dismiss")
             return
         }
         spinner.show(in: view)
@@ -57,11 +57,14 @@ extension LoginViewController {
             DispatchQueue.main.async {
                 strongSelf.spinner.dismiss()
             }
+            
             guard let _ = authResult, error == nil else {
                 strongSelf.showAlert(with: "Error", with: error?.localizedDescription ?? "", with: "Dismiss")
                 return
             }
+            
             let safeEmail = DatabaseManager.safeEmail(with: email)
+            
             DatabaseManager.shared.getInfoFor(with: safeEmail, completion: { result in
                 switch result {
                 case .success(let value):
@@ -70,12 +73,13 @@ extension LoginViewController {
                           let lastName = userData["last_name"] as? String else {
                         return
                     }
-                    AppDefaults.shared.name = firstName + lastName
+                    AppDefaults.shared.name = "\(firstName) \(lastName)"
+                    AppDefaults.shared.email = email
                 case .failure(let error):
                     print("failed to fetch the error \(error)")
                 }
             })
-            AppDefaults.shared.email = email
+            
             strongSelf.navigationController?.dismiss(animated: true)
         })
     }
@@ -104,7 +108,7 @@ extension LoginViewController {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
                                                            accessToken: accessToken.tokenString)
             
-            let result = try await Auth.auth().signIn(with: credential)
+            _ = try await Auth.auth().signIn(with: credential)
             guard let firstName = user.profile?.givenName,
                   let lastName = user.profile?.familyName,
                   let email = user.profile?.email else {
@@ -113,7 +117,7 @@ extension LoginViewController {
                 return true
             }
             AppDefaults.shared.email = email
-            AppDefaults.shared.name = firstName + lastName
+            AppDefaults.shared.name = "\(firstName) \(lastName)"
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
@@ -179,7 +183,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
         if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
-            self.login()
+            login()
         }
         return true
     }

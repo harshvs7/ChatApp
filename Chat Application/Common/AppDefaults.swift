@@ -14,6 +14,7 @@ struct DefaultValues {
     static let name = "name"
 }
 
+///A  class to access the userDefaults with modularity and at one place
 class AppDefaults {
     static let shared = AppDefaults()
     private var userDefaults = UserDefaults.standard

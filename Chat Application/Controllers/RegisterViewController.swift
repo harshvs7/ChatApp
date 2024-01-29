@@ -31,14 +31,14 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController {
     
     private func setUpUI() {
-        self.title = "Register User"
-        self.firstNameTextField.delegate = self
-        self.lastNameTextField.delegate = self
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
-        self.profileImage.image = UIImage(systemName: "person.circle")
-        self.profileImage.tintColor = UIColor.lightGray
-        self.profileImage.makeCircleRound()
+        title = "Register User"
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        profileImage.image = UIImage(systemName: "person.circle")
+        profileImage.tintColor = UIColor.lightGray
+        profileImage.makeCircleRound()
         let tap = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         profileImage.addGestureRecognizer(tap)
     }
@@ -54,7 +54,7 @@ extension RegisterViewController {
               let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty, password.count >= 6
         else {
-            self.showAlert(with: "Error", with: "Please add the valid information", with: "Dismiss")
+            showAlert(with: "Error", with: "Please add the valid information", with: "Dismiss")
             return
         }
         
@@ -93,7 +93,7 @@ extension RegisterViewController {
                                 UserDefaults.standard.setValue(downloadURL, forKey: "profile_picture_url")
                                 AppDefaults.shared.profilePicture = downloadURL
                                 AppDefaults.shared.email = email
-                                AppDefaults.shared.name = firstName + lastName
+                                AppDefaults.shared.name = "\(firstName) \(lastName)"
                                 print( "\(downloadURL)")
                                 
                             case .failure(let error):
@@ -136,7 +136,7 @@ extension RegisterViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else {
             passwordTextField.resignFirstResponder()
-            self.registerUser()
+            registerUser()
         }
         
         return true

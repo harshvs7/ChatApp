@@ -21,19 +21,32 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="697"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-py-hSM">
+                                <rect key="frame" x="91.333333333333329" y="408" width="210.33333333333337" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210.5" id="uC0-Xz-DQz"/>
+                                    <constraint firstAttribute="height" constant="36" id="yLu-lh-dti"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="Rva-py-hSM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FCh-dA-KTl"/>
                             <constraint firstItem="N1i-Wp-cSi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FkX-TO-bys"/>
                             <constraint firstItem="N1i-Wp-cSi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YeA-qR-fet"/>
                             <constraint firstItem="N1i-Wp-cSi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gQa-W3-nLr"/>
                             <constraint firstAttribute="bottom" secondItem="N1i-Wp-cSi" secondAttribute="bottom" id="uqe-4e-1sG"/>
+                            <constraint firstItem="Rva-py-hSM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zLq-SK-HwH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chats" id="gw7-4H-cXj"/>
                     <connections>
                         <outlet property="chatsTableView" destination="N1i-Wp-cSi" id="4rD-8h-6ys"/>
+                        <outlet property="noResultFoundLabel" destination="Rva-py-hSM" id="Rsq-i5-IvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dda-O9-RGD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dda-O9-RGD">
                                 <rect key="frame" x="0.0" y="155" width="393" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -93,7 +106,7 @@
         <scene sceneID="7w4-Qm-t3D">
             <objects>
                 <navigationController title="Chats" automaticallyAdjustsScrollViewInsets="NO" id="cVt-Ti-zb0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" selectedImage="message" catalog="system" id="mt9-dG-hZE"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" selectedImage="message" id="mt9-dG-hZE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="qb2-NL-bI5">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -112,7 +125,7 @@
         <scene sceneID="uZ2-I2-sFG">
             <objects>
                 <navigationController title="Profile" automaticallyAdjustsScrollViewInsets="NO" id="MZB-1k-hjf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="person" catalog="system" id="DGS-I8-5NC"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="DGS-I8-5NC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="K7S-3d-WlA">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>

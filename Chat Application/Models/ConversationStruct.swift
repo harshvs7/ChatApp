@@ -18,4 +18,5 @@ struct LatestMessage {
     let date: String
     let message: String
     let isRead: Bool
+    let type: String
 }

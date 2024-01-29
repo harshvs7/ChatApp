@@ -12,48 +12,48 @@ extension UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
         get {
-            return self.layer.cornerRadius
+            return layer.cornerRadius
         }
         set {
-            self.layer.cornerRadius = newValue
+            layer.cornerRadius = newValue
         }
     }
     
     @IBInspectable var borderWidth: CGFloat {
         get {
-            return self.layer.borderWidth
+            return layer.borderWidth
         }
         set {
-            self.layer.borderWidth = newValue
+            layer.borderWidth = newValue
         }
     }
     
     @IBInspectable var borderColor: UIColor {
         get {
-            return UIColor(cgColor: self.layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
         }
         set {
-            self.layer.borderColor = newValue.cgColor
+            layer.borderColor = newValue.cgColor
         }
     }
     
     func textFieldBorder(){
         
-        self.layer.borderWidth = 1
-        self.borderColor = UIColor.green
-        self.layer.cornerRadius = 6
+        layer.borderWidth = 1
+        borderColor = UIColor.green
+        layer.cornerRadius = 6
     }
     // Error red Border
     func errorBorder(){
         
-        self.layer.borderWidth = 1
-        self.borderColor = UIColor.red
-        self.layer.cornerRadius = 6
+        layer.borderWidth = 1
+        borderColor = UIColor.red
+        layer.cornerRadius = 6
     }
     
     func makeCircleRound() {
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = self.layer.bounds.width / 2.0
+        layer.masksToBounds = true
+        layer.cornerRadius = layer.bounds.width / 2.0
     }
 }
 
@@ -89,8 +89,8 @@ extension UIViewController {
         alert.addAction(action)
         alert.addAction(actionTwo)
         
-        DispatchQueue.main.async{
-            self.present(alert, animated: true)
+        DispatchQueue.main.async{ [weak self] in
+            self?.present(alert, animated: true)
         }
     }
 }
@@ -127,9 +127,9 @@ class CustomTextField: UITextField {
     }
     
     override func draw(_ rect: CGRect) {
-        self.layer.cornerRadius = self.cornerRadius
-        self.layer.borderWidth = self.borderWidth
-        self.layer.borderColor = self.borderColor.cgColor
+        layer.cornerRadius = cornerRadius
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor
     }
     
 }

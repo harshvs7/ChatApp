@@ -38,7 +38,8 @@ extension NewConversationViewController {
     
     private func searchUsers(with query: String) {
         if hasFetched {
-            self.filterUser(with: query)
+            filterUser(with: query)
+            updateUI()
         } else {
             DatabaseManager.shared.getAllUsers(completion: { [weak self] result in
                 guard let strongSelf = self else { return }
@@ -58,15 +59,15 @@ extension NewConversationViewController {
     private func filterUser(with term: String) {
         guard let email = AppDefaults.shared.email, hasFetched else { return }
         let safeSenderEmail = DatabaseManager.safeEmail(with: email)
-        self.spinner.dismiss()
-        let results: [SearchUserResult] = self.users.filter({
-            guard let email = $0["email"], email != safeSenderEmail else { return false }
+        spinner.dismiss()
+        let results: [SearchUserResult] = users.filter({
+            guard let email = $0["safe_email"], email != safeSenderEmail else { return false }
             guard let name = $0["name"]?.lowercased() else {
                 return false
             }
             return name.hasPrefix(term.lowercased())
         }).compactMap({
-            guard let email = $0["email"], let name = $0["name"] else {
+            guard let email = $0["safe_email"], let name = $0["name"] else {
                 return nil
             }
             return SearchUserResult(name: name, email: email )
@@ -99,6 +100,14 @@ extension NewConversationViewController: UISearchBarDelegate {
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         dismiss(animated: true)
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let text = searchText as? String, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
+            return
+        }
+        results.removeAll()
+        spinner.show(in: view)
+        searchUsers(with: text)
     }
 }
 

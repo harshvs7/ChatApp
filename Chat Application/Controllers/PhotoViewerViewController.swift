@@ -16,8 +16,8 @@ class PhotoViewerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.sd_setImage(with: url)
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationItem.title = "Photo"
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = "Photo"
     }
 
     init(url: URL) {
