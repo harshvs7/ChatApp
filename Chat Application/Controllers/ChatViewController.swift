@@ -136,9 +136,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         actionSheet.addAction(UIAlertAction(title: "Video", style: .default, handler: { [weak self] _ in
             self?.presentVideoInputActionSheet()
         }))
-        actionSheet.addAction(UIAlertAction(title: "Audio", style: .default, handler: { _ in
-            
-        }))
         actionSheet.addAction(UIAlertAction(title: "Location", style: .default, handler: { [weak self] _ in
             self?.presentLocationPicker()
         }))
